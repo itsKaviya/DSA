@@ -1,0 +1,10 @@
+class Solution {
+public:
+    long long int mySqrt(int x) {
+        long long int ans = 1;
+        while(ans*ans <= x){
+            ans++;
+        }
+    return ans-1;
+    }
+};
