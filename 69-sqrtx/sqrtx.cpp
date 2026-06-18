@@ -1,10 +1,25 @@
 class Solution {
 public:
     long long int mySqrt(int x) {
-        long long int ans = 1;
-        while(ans*ans <= x){
-            ans++;
+        int l = 0;
+        int r = x;
+        int res =0;
+        while(l <= r){
+            int mid = l + (r - l)/2;
+            if((long long) mid * mid > x){
+                r = mid -1;
+            }else if ((long long)mid * mid < x){
+                l = mid +1;
+                res = mid;
+            }else{
+                return mid;
+            }
         }
-    return ans-1;
+        return res;
+    //     long long int ans = 1;
+    //     while(ans*ans <= x){
+    //         ans++;
+    //     }
+    // return ans-1;
     }
 };
