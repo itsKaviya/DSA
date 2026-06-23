@@ -11,7 +11,8 @@ public:
         }
 
         for(int i=1;i<arr.size();i++){
-            if((arr[i] - arr[i-1]) == minDiff){
+            int diff = arr[i] - arr[i-1];
+            if(diff == minDiff){
                 res.push_back({arr[i-1], arr[i]});
             }
         }
