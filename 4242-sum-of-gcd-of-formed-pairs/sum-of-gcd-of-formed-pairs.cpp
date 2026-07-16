@@ -1,6 +1,6 @@
 class Solution {
 public:
-    int gcd(int a, int b){
+    long long gcd(int a, int b){
         while(b>0){
             int temp = b;
             b = a % b;
@@ -13,9 +13,9 @@ public:
         
         vector<long long> prefixGCD;
         long long mxi = 0;
-        for(int i=0;i<nums.size();i++){
-            mxi = max(mxi, (long long)nums[i]);
-            prefixGCD.push_back(gcd((long long)nums[i], mxi)); 
+        for(int it : nums){
+            mxi = max(mxi, (long long)it);
+            prefixGCD.push_back(gcd((long long)it, mxi)); 
         }
 
         sort(prefixGCD.begin(), prefixGCD.end());
