@@ -1,20 +1,14 @@
 class Solution {
 public:
-    int GCD(int a, int b){
-        while(b>0){
-            int temp = b;
-            b = a % b;
-            a = temp;
-        }
-        return a;
-    }
+int gcd(int a , int b){
+      if(b == 0) return a;
 
+        return gcd(b,a%b);
+}
     int findGCD(vector<int>& nums) {
-        sort(nums.begin(), nums.end());
-
-        int smallest = nums[0];
-        int largest = nums[nums.size()-1];
-
-        return GCD(smallest, largest);
+        sort(nums.begin(),nums.end());
+         int a = nums[0];
+         int b = nums[nums.size()-1];
+      return    gcd(a,b);
     }
 };
